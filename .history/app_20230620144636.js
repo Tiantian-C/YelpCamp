@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 app.get("/makecampground", async(req, res) => {
-    const camp = new Campground({ title: 'My Backyard',description:'Cheap Camping!' })
+    const camp = new Campground({ title: 'My Backyard',description:'Cheap Campi' })
     await camp.save();
     res.send(camp);
 });
