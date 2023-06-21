@@ -37,11 +37,10 @@ app.get("/campgrounds/new", (req, res) => {
   res.render("campgrounds/new");
 });
 
-//submit the form to
 app.post('/campgrounds', async(req,res) => {
     const campgound = new Campground(req.body.campground);
     await campgound.save();
-    res.redirect(`/campgrounds/${campgound._id}`);
+    res.redirect(`/campgrounds/${}`)
 })
 
 //show the details of a campground

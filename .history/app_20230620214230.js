@@ -37,7 +37,7 @@ app.get("/campgrounds/new", (req, res) => {
   res.render("campgrounds/new");
 });
 
-//submit the form to
+//submit the form
 app.post('/campgrounds', async(req,res) => {
     const campgound = new Campground(req.body.campground);
     await campgound.save();

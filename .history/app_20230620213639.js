@@ -19,7 +19,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-//parse the req.body
+//parse the b
 app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req, res) => {
@@ -32,16 +32,13 @@ app.get("/campgrounds", async(req, res) => {
     res.render('campgrounds/index',{campgrounds})
 });
 
-//create a new campgorund(a form)
+//create a new campgorund
 app.get("/campgrounds/new", (req, res) => {
   res.render("campgrounds/new");
 });
 
-//submit the form to
 app.post('/campgrounds', async(req,res) => {
-    const campgound = new Campground(req.body.campground);
-    await campgound.save();
-    res.redirect(`/campgrounds/${campgound._id}`);
+    res.send(req.body);
 })
 
 //show the details of a campground
