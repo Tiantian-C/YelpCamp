@@ -1,4 +1,3 @@
-/**creating and inserting initial data**/
 
 const mongoose = require("mongoose");
 const cities = require('./cities');

@@ -25,10 +25,9 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
-//show all the campgrounds
 app.get("/campgrounds", async(req, res) => {
     const campgrounds = await Campground.find({});
-    res.render('campgrounds/index',{campgrounds})
+    res.render('campgrounds/index',{})
 });
 
 app.listen(3000, () => {
